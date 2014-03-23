@@ -1,10 +1,15 @@
 {
     "version": "0.0.1",
     "name": "personality",
-    "displayName": "",
-    "instanceId": "",
-    "capabilities": {},
+    "displayName": "Personality Application",
+    "instanceId": "personality1",
+    "capabilities": {
+    	"personality": "0.0.1"
+	},
     "API": 0,
-    "description": "",
-    "dependencies": {}
+    "description": "Contains mannerisms and canned responses to queries.",
+    "dependencies": {
+    	"stt": "0.0.1",
+    	"tts": "0.0.1"
+    }
 }
