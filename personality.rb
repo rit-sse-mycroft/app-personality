@@ -1,28 +1,47 @@
 require 'mycroft'
+require_relative './personality_module'
 
 class Personality < Mycroft::Client
-
+  include PersonalityModule
   attr_accessor :verified
 
   def initialize(host, port)
-    @key = '/path/to/key'
-    @cert = '/path/to/cert'
+    @key = ''
+    @cert = ''
     @manifest = './app.json'
     @verified = false
+    @sent_grammar = false
+    @dependencies = {}
+    @personality_module = PersonalityModule.new
     super
   end
 
-  def connect
-    # Your code here
+  on 'MSG_BROADCAST' do |data|
+    trigger = data['content']['text']
+    resp = response_for(trigger)
+    tts(resp)
   end
 
-  def on_data(data)
-    # Your code here
+  on 'APP_DEPENDENCY' do |data|
+    update_dependencies(data)
+    if not @dependencies['stt'].nil?
+      if @dependencies['stt']['stt1'] == 'up' and not @sent_grammar
+        up
+        data = {grammar: { name: 'joke', xml: File.read('./grammar.xml')}}
+        query('stt', 'load_grammar', data)
+        @sent_grammar = true
+      elsif @dependencies['stt']['stt1'] == 'down' and @sent_grammar
+        @sent_grammar = false
+        down
+      end
+    end
   end
 
-  def on_end
-    # Your code here
+  # Handler for disconnect
+  on 'end' do
+    query('stt', 'unload_grammar', {grammar: 'joke'})
   end
+
 end
 
 Mycroft.start(Personality)
