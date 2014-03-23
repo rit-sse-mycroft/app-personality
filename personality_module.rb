@@ -5,12 +5,12 @@ module PersonalityModule
   SAYINGS = YAML.load_file('sayings.yml')
 
   def response_for(trigger)
-    @SAYINGS.detect {|saying| saying['trigger'] == trigger}
+    SAYINGS.find {|saying| saying['trigger'] == trigger}['response']
   end
 
   # Sends a message to tts
   def tts(text)
-    content = {text: text, targetSpeaker: "speakers"}
+    content = {text: [ {phrase: text, delay: 0} ], targetSpeaker: "speakers"}
     query('tts', 'stream', content)
   end
 

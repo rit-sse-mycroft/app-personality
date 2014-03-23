@@ -12,7 +12,6 @@ class Personality < Mycroft::Client
     @verified = false
     @sent_grammar = false
     @dependencies = {}
-    @personality_module = PersonalityModule.new
     super
   end
 
@@ -27,7 +26,7 @@ class Personality < Mycroft::Client
     if not @dependencies['stt'].nil?
       if @dependencies['stt']['stt1'] == 'up' and not @sent_grammar
         up
-        data = {grammar: { name: 'joke', xml: File.read('./grammar.xml')}}
+        data = {grammar: { name: 'personality', xml: File.read('./grammar.xml')}}
         query('stt', 'load_grammar', data)
         @sent_grammar = true
       elsif @dependencies['stt']['stt1'] == 'down' and @sent_grammar
