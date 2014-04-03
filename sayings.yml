@@ -1,3 +1,4 @@
 - 
     trigger: hello mycroft
-    response: hello human
+    responses:
+    	- hello human

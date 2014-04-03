@@ -5,7 +5,7 @@ module PersonalityModule
   SAYINGS = YAML.load_file('sayings.yml')
 
   def response_for(trigger)
-    SAYINGS.find {|saying| saying['trigger'] == trigger}['response']
+    SAYINGS.find {|saying| saying['trigger'] == trigger}['responses'].choice
   end
 
   # Sends a message to tts
