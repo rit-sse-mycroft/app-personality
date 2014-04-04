@@ -3,6 +3,16 @@
   <rule id="personality" scope="public">
     <one-of>
       <item>hello mycroft</item>
+      <item>mycroft what is your favorite color</item>
+      <item>mycroft roll a die</item>
+      <item>mycroft roll a D six</item>
+      <item>thank you mycroft</item>
+      <item>mycroft thank you</item>
+      <item>mycroft what is the answer to life the universe and everything</item>
+      <item>mycroft dim the lights</item>
+      <item>mycroft sing me a song</item>
+      <item>mycroft when is your birthday</item>
+      <item>mycroft activate tour mode</item>
     </one-of>
   </rule>
 </grammar>

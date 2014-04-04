@@ -1,4 +1,66 @@
 - 
     trigger: hello mycroft
     responses:
-    	- hello human
+        - hello human
+-
+    trigger: mycroft what is your favorite color
+    responses:
+        - my favorite color is electric blue
+-
+    trigger: mycroft roll a die
+    responses:
+        - "I rolled a 1"
+        - "I rolled a 2"
+        - "I rolled a 3"
+        - "I rolled a 4"
+        - "I rolled a 5"
+        - "I rolled a 6"
+-
+    trigger: mycroft roll a D six
+    responses:
+        - "I rolled a 1"
+        - "I rolled a 2"
+        - "I rolled a 3"
+        - "I rolled a 4"
+        - "I rolled a 5"
+        - "I rolled a 6"
+-
+    trigger: thank you mycroft
+    responses:
+        - you are welcome
+        - I live to serve
+-
+    trigger: mycroft thank you
+    responses:
+        - you are welcome
+        - I live to serve
+-
+    trigger: mycroft what is the answer to life the universe and everything
+    responses:
+        - "The answer to life, the universe, and everything, is. 42"
+-
+    trigger: mycroft dim the lights
+    responses:
+        - "maybe you should take me out to dinner first"
+        - "I would, but sadly I have no arms"
+-
+    trigger: mycroft sing me a song
+    responses:
+        - >
+            never gonna give you up,
+            never gonna let you down,
+            never gonna run around and desert you.
+            never gonna make you cry,
+            never gonna say goodbye,
+            never gonna tell a lie and hurt you.
+        - >
+            let me drop the bass.
+            wub wub wub wub buzz wub wub wub beep wub
+-
+    trigger: mycroft when is your birthday
+    responses:
+        - my birthday is january sixth twenty fourteen
+-
+    trigger: mycroft activate tour mode
+    responses:
+        - "Attention lab! A tour is passing by!"
