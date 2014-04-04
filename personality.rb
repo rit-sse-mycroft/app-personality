@@ -40,7 +40,7 @@ class Personality < Mycroft::Client
 
   # Handler for disconnect
   on 'end' do
-    query('stt', 'unload_grammar', {grammar: 'joke'})
+    query('stt', 'unload_grammar', {grammar: 'personality'})
   end
 
 end
