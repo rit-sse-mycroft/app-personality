@@ -61,6 +61,17 @@
     responses:
         - my birthday is january sixth twenty fourteen
 -
-    trigger: mycroft activate tour mode
+    trigger: mycroft tour 
     responses:
         - "Attention lab! A tour is passing by!"
+-
+    trigger: mycroft i love you
+    responses: 
+        - you dont even know me
+        - thats sweet of you
+-
+    trigger: mycroft enlighten me
+    responses:
+        - CAPS LOCK IS CRUSE CONTROL!
+
+
