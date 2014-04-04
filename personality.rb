@@ -16,9 +16,11 @@ class Personality < Mycroft::Client
   end
 
   on 'MSG_BROADCAST' do |data|
-    trigger = data['content']['text']
-    resp = response_for(trigger)
-    tts(resp)
+    if data['content']['grammar'] == 'personality'
+      trigger = data['content']['text']
+      resp = response_for(trigger)
+      tts(resp)
+    end
   end
 
   on 'APP_DEPENDENCY' do |data|
