@@ -12,7 +12,9 @@
       <item>mycroft dim the lights</item>
       <item>mycroft sing me a song</item>
       <item>mycroft when is your birthday</item>
-      <item>mycroft activate tour mode</item>
+      <item>mycroft tour</item>
+      <item>mycroft i love you</item>
+      <item>mycroft enlighten me</item>
     </one-of>
   </rule>
 </grammar>
