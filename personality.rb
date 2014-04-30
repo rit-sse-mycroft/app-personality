@@ -45,4 +45,4 @@ class Personality < Mycroft::Client
 
 end
 
-Mycroft.start(Personality)
+Mycroft.start(Personality, ARGV[0], ARGV[1].to_i)
